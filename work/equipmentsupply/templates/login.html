@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<form method="POST">
+  <br>
+  <h2>Login Page</h2>
+    {# This hidden_tag is a CSRF security feature. #}
+    {{ form.hidden_tag() }}
+    <br><br>
+    {{ form.email.label }} {{ form.email() }}<br><br>
+    {{ form.password.label }} {{ form.password() }}
+    <br><br>
+    {{ form.submit() }}
+</form>
+{% endblock %}
